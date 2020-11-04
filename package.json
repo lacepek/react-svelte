@@ -1,6 +1,6 @@
 {
-  "name": "react-svelte",
-  "version": "1.0.2",
+  "name": "react-svelte-kareer",
+  "version": "1.0.0",
   "description": "Use Svelte components inside a React app",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Rich-Harris/react-svelte.git"
+    "url": "git+https://github.com/lacepek/react-svelte.git"
   },
   "keywords": [
     "react",
@@ -22,6 +22,6 @@
   },
   "homepage": "https://github.com/Rich-Harris/react-svelte#readme",
   "peerDependencies": {
-    "react": "^16.4.2"
+    "react": "^16.12.0"
   }
 }

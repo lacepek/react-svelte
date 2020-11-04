@@ -1,32 +1,37 @@
-import * as React from 'react';
+import React from 'react';
 
-export default class SvelteComponent extends React.Component {
-	constructor() {
-		super();
+export class SvelteComponent extends React.Component {
+  constructor(props) {
+    super();
 
-		this.container = React.createRef();
-		this.instance = null;
-		this.div = React.createElement('div', { ref: this.container });
-	}
+    this.container = React.createRef();
+    this.instance = null;
+    this.div = React.createElement('div', {
+      ref: this.container,
+      id: props.id,
+      className: props.className,
+      children: props.children,
+    });
+  }
 
-	componentDidMount() {
-		const { this: Constructor, ...data } = this.props;
+  componentDidMount() {
+    const { this: Constructor, data } = this.props;
 
-		this.instance = new Constructor({
-			target: this.container.current,
-			data
-		});
-	}
+    this.instance = new Constructor({
+      target: this.container.current,
+      props: data,
+    });
+  }
 
-	componentDidUpdate() {
-		this.instance.set(this.props);
-	}
+  componentDidUpdate() {
+    this.instance.$$set(this.props.data);
+  }
 
-	componentWillUnmount() {
-		this.instance.destroy();
-	}
+  componentWillUnmount() {
+    this.instance.$$destroy();
+  }
 
-	render() {
-		return this.div;
-	}
+  render() {
+    return this.div;
+  }
 }

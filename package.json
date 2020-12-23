@@ -1,6 +1,6 @@
 {
   "name": "react-svelte-kareer",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Use Svelte components inside a React app",
   "main": "index.js",
   "scripts": {
@@ -24,7 +24,7 @@
   "peerDependencies": {
     "react": "^16.12.0"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/" 
-  } 
+  "devDependencies": {
+    "react": "^16.12.0"
+  }
 }
